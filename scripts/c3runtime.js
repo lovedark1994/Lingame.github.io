@@ -4152,9 +4152,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.MoveTo,
 		C3.Behaviors.Tween,
 		C3.Plugins.System.Cnds.OnLayoutStart,
-		C3.Plugins.System.Cnds.IsPreview,
-		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.Sprite.Acts.SetAnim,
+		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Cnds.CompareBetween,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Text.Acts.SetText,
@@ -4176,6 +4175,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.LocalStorage.Cnds.OnItemRemoved,
 		C3.Plugins.Browser.Exps.QueryParam,
 		C3.Plugins.LocalStorage.Acts.GetItem,
+		C3.Plugins.System.Cnds.IsPreview,
 		C3.Plugins.LocalStorage.Cnds.OnItemGet,
 		C3.Plugins.LocalStorage.Exps.ItemValue,
 		C3.Plugins.LocalStorage.Cnds.OnItemMissing,
@@ -4325,16 +4325,16 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
-		() => 0,
-		() => 1,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue()).toString();
 		},
+		() => 0,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
+		() => 1,
 		() => 5,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
@@ -4343,18 +4343,20 @@ self.C3_ExpressionFuncs = [
 		() => "JACK:\n這裡是林家昔日招待貴賓及貴賓下榻之處，亦為俯覽橫虹臥月的虹橋與定靜堂間植百花之所。",
 		() => 2,
 		() => "ROSE:\n橫虹臥月為一座弧形的陸橋，其名優美，意象與寫景皆俱，弧形橋面如虹，而拱形門洞有如半月，故得名。",
-		() => "嗨嗨~你是新來的冒險者嗎?(點擊繼續)",
-		() => "你知道嗎?這裡是仿造林家花園打造出來的喔",
+		() => "嗨嗨~你是新來的冒險者嗎?我是JACK(點擊繼續)",
+		() => "你知道嗎?這裡充滿著這種神奇的魔法喔",
 		() => 3,
 		() => "有其他困難再來找我吧",
+		() => "嗨嗨~你是新來的冒險者嗎?我是ROSE(點擊繼續)",
+		() => "你知道嗎?這裡是仿造林家花園打造出來的喔",
 		() => "我剛剛看你在池子邊好像很苦惱的樣子(點擊繼續)",
 		() => "是有什麼東西掉進池子裡面了嗎?那真是太糟糕了",
 		() => "聽說ROSE有工具可以幫助你，去找他吧，你應該知道去哪裡找他吧",
 		() => "聽說JACK有工具可以幫助你，去找他吧，你應該知道去哪裡找他吧",
-		() => "我都聽說了，你需要可以撈池子的工具對吧",
-		() => "我想想喔.....",
-		() => "啊!剛好有我昨天吃烤肉剩下的鐵勾，就送給你吧，快去撈吧",
 		() => 4,
+		() => "我都聽說了，你需要可以撈池子的工具對吧",
+		() => "恩.....我想想喔.....",
+		() => "啊!剛好有我昨天吃烤肉剩下的鐵勾，就送給你吧，快去撈吧",
 		() => "在如意池那裡，有矗立在池中的石頭，看起來好奇怪，不如你去那張地圖看看吧",
 		() => "在方鑑齋-水中央的這張地圖中，有一條隱居橋，最近橋上浮現出了奇怪圖案，你分別點進方塊和放大鏡去觀察看看吧",
 		() => 50,
@@ -4379,6 +4381,7 @@ self.C3_ExpressionFuncs = [
 		() => "3",
 		() => "4",
 		() => "2",
+		() => "5",
 		() => "次",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4408,7 +4411,7 @@ self.C3_ExpressionFuncs = [
 		() => "員工資料\n員工編號:132\n中文姓名:陳紫玲\n英文姓名:ROSE\n職位:遊戲測試人員\n\n員工資料\n員工編號:133\n中文姓名:楊立\n英文姓名:JACK\n職位:遊戲測試人員",
 		() => "水面背景",
 		() => "0",
-		() => "水底似乎有什麼東西\n但你拿不到\n去問問遊戲中的其他角色\n有什麼方法吧",
+		() => "水底似乎有什麼東西\n但你拿不到\n去問問遊戲中的其他角色\n有什麼方法吧\n你應該還記得他們在哪裡吧",
 		() => "你用鉤子將水中的東西勾了上來\n是一個黑色的盒子\n盒子上面寫著什麼\n已經磨損到看不清\n但盒子內寫的文字勉強可以辨識"
 ];
 
