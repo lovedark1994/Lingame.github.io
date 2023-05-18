@@ -4175,6 +4175,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.LocalStorage.Cnds.OnItemRemoved,
 		C3.Plugins.Browser.Exps.QueryParam,
 		C3.Plugins.LocalStorage.Acts.GetItem,
+		C3.Plugins.Text.Acts.SetVisible,
 		C3.Plugins.System.Cnds.IsPreview,
 		C3.Plugins.LocalStorage.Cnds.OnItemGet,
 		C3.Plugins.LocalStorage.Exps.ItemValue,
